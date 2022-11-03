@@ -9,6 +9,21 @@
 
 <body>
 	<div class="topnav">
+		<div class="theme">
+			<div>Тема</div>
+			<div>
+				<form method="post" action="http://localhost/inp/select">
+					<select id="subject" name="subject">
+						<option value="light">Abyss</option>
+						<option value="light">Dark</option>
+						<option value="light">Light</option>
+						<option value="light">Monokai</option>
+					</select>
+					<input type="submit" value="Принять" />
+				</form>
+			</div>
+		</div>
+
 		<div class="login-container">
 			<form method="post" action="http://localhost/auth/login">
 				<input type="text" placeholder="Логин" name="username">
@@ -16,6 +31,7 @@
 				<button type="submit">Войти</button>
 			</form>
 		</div>
+
 	</div>
 
 	<div class="header">
@@ -23,7 +39,38 @@
 			<h2>Первые чемпионы мира по шахматам</h2>
 		</div>
 	</div>
-	<div class="mysite">
+
+	<div class="content">
+		<div class="row">
+			<div class="column">
+				<div class="quiz">
+					<fieldset>
+						<div>Кто был первым чемпионом?</div>
+						<form method="post" action="http://localhost/inp/radio">
+							<p>
+								<input type="radio" value="steinitz" name="subject" checked /> В. Стейниц
+							</p>
+							<p>
+								<input type="radio" value="lasker" name="subject" checked /> Э. Ласкер
+							</p>
+							<p>
+								<input type="radio" value="capablanca" name="subject" /> Х. Капабланка
+							</p>
+							<p>
+								<input type="radio" value="alekhine" name="subject" /> А. Алехин
+							</p>
+							<p>
+								<input type="submit" value="Узнать ответ" />
+							</p>
+						</form>
+					</fieldset>
+				</div>
+			</div>
+
+			<div class="column">2nd column</div>
+			<div class="column">3rd column</div>
+
+		</div>
 
 		<div class="row">
 			<div class="column">
@@ -165,8 +212,8 @@
 				</div>
 			</div>
 		</div>
-
 	</div>
+
 	<div class="footer">2022 Copyright FirstChessChampions.com</div>
 </body>
 
