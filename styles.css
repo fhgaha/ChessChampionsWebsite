@@ -113,6 +113,10 @@ chart-position,
 	flex: 1;
 }
 
+.champions .column{
+	flex: content;
+}
+
 .photo {
 	width: 200px;
 	padding: 1em;
