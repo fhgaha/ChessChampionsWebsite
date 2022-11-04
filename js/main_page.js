@@ -1,4 +1,4 @@
-var chart = document.querySelector(".top-players-chart");
+var chart = document.querySelector(".top-players-list");
 
 const req = new XMLHttpRequest();
 req.addEventListener("load", drawPlayerInfo);
