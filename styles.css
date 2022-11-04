@@ -42,7 +42,7 @@ input[type=password] {
 
 .theme {
 	float: right;
-	
+
 }
 
 .topnav .theme img {
@@ -82,9 +82,7 @@ body {
 
 .row {
 	display: flex;
-	/* включаем режим Flexbox */
 	flex-direction: row;
-	/* дочерние элементы будут располагаться слева на право */
 	text-align: center;
 	/* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); */
 	/* margin: 1em 0em; */
@@ -97,6 +95,22 @@ body {
 .column {
 	flex: 1;
 	border: 1px gray solid;
+}
+
+.top-players-chart {
+	display: flex;
+	flex-direction: column;
+}
+
+.chart-row {
+	display: flex;
+	flex-direction: row;
+}
+
+chart-position,
+.chart-name,
+.chart-rating {
+	flex: 1;
 }
 
 .photo {
