@@ -44,7 +44,7 @@
 		<div class="row">
 			<div class="column">
 				<fieldset class="quiz">
-					<div>Кто был первым чемпионом?</div>
+					Кто был первым чемпионом?
 					<div id="root"></div>
 				</fieldset>
 			</div>
@@ -304,13 +304,22 @@
 
 			render() {
 				return (
-					<form onSubmit={this.handleSubmit} >
-						<ChampRadioInput player="В. Стейниц" onChange={this.handleChange} />
-						<ChampRadioInput player="Э. Ласкер" onChange={this.handleChange} />
-						<ChampRadioInput player="Х. Капабланка" onChange={this.handleChange} />
-						<ChampRadioInput player="А. Алехин" onChange={this.handleChange} />
-
-						<input type="submit" value="Узнать ответ" />
+					<form className="quizForm" onSubmit={this.handleSubmit} >
+						<div className="row">
+							<div className="column"></div>
+							<div className="column champ-list">
+								<ChampRadioInput player="В. Стейниц" onChange={this.handleChange} />
+								<ChampRadioInput player="Э. Ласкер" onChange={this.handleChange} />
+								<ChampRadioInput player="Х. Капабланка" onChange={this.handleChange} />
+								<ChampRadioInput player="А. Алехин" onChange={this.handleChange} />
+							</div>
+							<div className="column"></div>
+						</div>
+						<div className="row">
+							<div className="column">
+								<input type="submit" value="Узнать ответ" />
+							</div>
+						</div>
 					</form>
 				);
 			}

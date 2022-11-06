@@ -89,17 +89,39 @@ body {
 	padding: 1em;
 }
 
-/* .row:hover {
-	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-} */
-
 .column {
 	flex: 1;
 	padding: 1em;
 }
 
-.quiz #root > div > form{
+.quiz{
+	background-color: whitesmoke;
+	border: none;
+}
+
+.quizForm>div,
+.quizForm>input {
+	padding: 0.3em;
 	display: flex;
+	flex-direction: row;
+	text-align: center;
+}
+
+.quizForm>input {
+	margin: 1em 0em 0em 0em;
+}
+
+.quiz .row .column {
+	flex: content;
+	padding: 0;
+}
+
+.champ-list {
+	text-align: start;
+}
+
+.champ-list>div {
+	padding: 0.3em;
 }
 
 .top-players-chart {
@@ -112,7 +134,7 @@ body {
 	flex-direction: column;
 }
 
-.chart-col-names{
+.chart-col-names {
 	border: 1px gray solid;
 }
 
@@ -125,6 +147,15 @@ chart-position,
 .chart-name,
 .chart-rating {
 	flex: 1;
+}
+
+.chart-position {
+	min-width: 20px;
+}
+
+.chart-name {
+	text-align: start;
+	padding-left: 1em;
 }
 
 .champions .row {
