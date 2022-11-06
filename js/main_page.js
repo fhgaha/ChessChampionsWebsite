@@ -1,9 +1,9 @@
 var chart = document.querySelector(".top-players-list");
 
-const req = new XMLHttpRequest();
+var req = new XMLHttpRequest();
 req.addEventListener("load", drawPlayerInfo);
 sendRequest();
-setInterval(updateChart, 1000*60*60);	//1 hour
+setInterval(updateChart, 1000 * 60 * 60);	//1 hour
 
 function sendRequest() {
 	req.open("GET", "https://api.chess.com/pub/leaderboards", true);
@@ -34,11 +34,12 @@ function drawPlayerInfo() {
 			name = res["daily"][i]["username"];
 		}
 
-		newChart += '<div class="chart-row">'
-			+ '<div class="chart-position">' + (i + 1) + '</div>'
-			+ '<div class="chart-name">' + name + '</div>'
-			+ '<div class="chart-rating">' + rating + '</div>'
-			+ '<div class="chart-country">' + country + '</div>'
+		newChart += 	
+			'<div class="chart-row">'
+				+ '<div class="chart-position">' + (i + 1) + '</div>'
+				+ '<div class="chart-name">' + name + '</div>'
+				+ '<div class="chart-rating">' + rating + '</div>'
+				+ '<div class="chart-country">' + country + '</div>'
 			+ '</div>';
 	}
 }

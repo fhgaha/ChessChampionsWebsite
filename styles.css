@@ -98,6 +98,10 @@ body {
 	padding: 1em;
 }
 
+.quiz #root > div > form{
+	display: flex;
+}
+
 .top-players-chart {
 	padding: 0.2em 1em 1em 1em;
 	background-color: whitesmoke;

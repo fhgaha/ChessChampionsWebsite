@@ -43,28 +43,10 @@
 	<div class="content">
 		<div class="row">
 			<div class="column">
-				<div class="quiz">
-					<fieldset>
-						<div>Кто был первым чемпионом?</div>
-						<form method="post" action="http://localhost/inp/radio">
-							<p>
-								<input type="radio" value="steinitz" name="subject" checked> В. Стейниц
-							</p>
-							<p>
-								<input type="radio" value="lasker" name="subject" checked> Э. Ласкер
-							</p>
-							<p>
-								<input type="radio" value="capablanca" name="subject"> Х. Капабланка
-							</p>
-							<p>
-								<input type="radio" value="alekhine" name="subject"> А. Алехин
-							</p>
-							<p>
-								<input type="submit" value="Узнать ответ">
-							</p>
-						</form>
-					</fieldset>
-				</div>
+				<fieldset class="quiz">
+					<div>Кто был первым чемпионом?</div>
+					<div id="root"></div>
+				</fieldset>
 			</div>
 
 			<div class="column">
@@ -79,7 +61,6 @@
 				leipzig, fantasy, spatial, california, pixel, maestro, fresca, cardinal, gioco, tatiana, staunty,
 				governor, dubrovny, icpieces, horsey, anarcandy, shapes, letter, disguised
 				bg: light, dark -->
-
 			</div>
 
 			<div class="column">
@@ -296,7 +277,54 @@
 
 	<div class="footer">2022 Copyright FirstChessChampions.com</div>
 
+
 	<script src="js/main_page.js"></script>
+	<script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+	<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>
+	<script type="text/babel">
+
+		class FirstChampion extends React.Component {
+			constructor() {
+				super();
+				this.state = { value: "" };
+
+				this.handleChange = this.handleChange.bind(this);
+				this.handleSubmit = this.handleSubmit.bind(this);
+			}
+
+			handleChange(event) {
+				this.setState({ value: event.target.value });
+			}
+
+			handleSubmit(event) {
+				alert('Вы выбрали: ' + this.state.value);
+				event.preventDefault();
+			}
+
+			render() {
+				return (
+					<form onSubmit={this.handleSubmit} >
+						<ChampRadioInput player="В. Стейниц" onChange={this.handleChange} />
+						<ChampRadioInput player="Э. Ласкер" onChange={this.handleChange} />
+						<ChampRadioInput player="Х. Капабланка" onChange={this.handleChange} />
+						<ChampRadioInput player="А. Алехин" onChange={this.handleChange} />
+
+						<input type="submit" value="Узнать ответ" />
+					</form>
+				);
+			}
+		}
+
+		const ChampRadioInput = ({ player, onChange }) => {
+			return (
+				<div> <input type="radio" value={player} name="champion" onChange={onChange} /> {player} </div>
+			);
+		};
+
+		ReactDOM.render(<FirstChampion />, document.getElementById("root"));
+
+	</script>
 </body>
 
 </html>
