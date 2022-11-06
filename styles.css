@@ -30,19 +30,14 @@ input[type=password] {
 	float: right;
 	padding: 6px;
 	margin: 0px 8px;
-	background: #ddd;
+	background: whitesmoke;
 	font-size: 17px;
 	border: none;
 	cursor: pointer;
 }
 
-.topnav .login-container button:hover {
-	background: #ccc;
-}
-
 .theme {
 	float: right;
-
 }
 
 .topnav .theme img {
@@ -68,7 +63,7 @@ input[type=password] {
 
 body {
 	margin: 0;
-	background-color: rgb(215, 209, 197);
+	background-color: rgb(211, 201, 181);
 }
 
 .content {
@@ -94,7 +89,7 @@ body {
 	padding: 1em;
 }
 
-.quiz{
+.quiz {
 	background-color: whitesmoke;
 	border: none;
 }
@@ -132,10 +127,6 @@ body {
 .top-players-list {
 	display: flex;
 	flex-direction: column;
-}
-
-.chart-col-names {
-	border: 1px gray solid;
 }
 
 .chart-row {
